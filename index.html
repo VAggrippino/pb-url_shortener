@@ -11,13 +11,16 @@
   <header>
     <h1>URL Shortener using only HTML / JS</h1>
     <div class="subtitle">
+      Inspired by the
       <a href="https://medium.freecodecamp.org/building-a-simple-url-shortener-with-just-html-and-javascript-6ea1ecda308c"
       >Tutorial by Palash Bauri</a>
     </div>
   </header>
   <main>
-    <input type="url" id="urlinput">
-    <button onclick="shortenUrl()">Shorten The URL</button>
+    <form id="shortenerForm" action="#" method="post">
+      <input type="url" id="urlInput" pattern="https?://.*">
+      <button type="submit">Shorten The URL</button>
+    </form>
   </main>
   <footer></footer>
   <script src="main.js"></script>
