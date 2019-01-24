@@ -1,0 +1,115 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+:root {
+  --header-height: 5rem;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+
+  /* From Lea Verou's CSS3 Patterns Gallery */
+  /* https://leaverou.github.io/css3patterns/#waves */
+  background:
+    radial-gradient(circle at 100% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent),
+    radial-gradient(circle at 0% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent) 0 -50px;
+  background-color: slategray;
+  background-size:75px 100px;
+}
+
+.header {
+  background-color: #111;
+  color: white;
+  padding: 0 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9001;
+  width: 100%;
+  height: var(--header-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.header--title {
+  margin: 0;
+}
+
+.header--subtitle a {
+  color: aqua;
+}
+
+main {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 99fr 1fr;
+  padding-top: var(--header-height);
+  box-sizing: border-box;
+}
+
+main aside {
+  font-size: 1.2rem;
+  background-color: beige;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.shortener-form {
+  --form-font-size: 1.5rem;
+  font-size: var(--form-font-size);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.shortener-form--input {
+  --border-radius: 0.25rem;
+  display: grid;
+  grid-template-columns: 99fr 1fr;
+  width: 50%;
+  margin: 1em;
+}
+
+.shortener-form--input--field {
+  font-size: var(--form-font-size);
+  padding: 0.25em;
+  text-align: center;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-style: none;
+}
+
+.shortener-form--input--button {
+  font-size: var(--form-font-size);
+  white-space: nowrap;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  border-style: none;
+  margin-left: 0.1em;
+}
+
+.shortener-form--output {
+  --border-radius: 0.25em;
+  width: 30%;
+  display: grid;
+  grid-template-columns: 99fr 1fr;
+}
+
+.shortener-form--output--field {
+  font-size: calc(var(--form-font-size) * 0.8);
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-style: none;
+  text-align: center;
+  color: blue;
+  padding: 0.25em;
+}
+
+.shortener-form--output--button {
+  border-style: none;
+  margin-left: 0.1em;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}

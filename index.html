@@ -8,21 +8,48 @@
   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
 <body>
-  <header>
-    <h1>URL Shortener using only HTML / JS</h1>
-    <div class="subtitle">
-      Inspired by the
+  <header class="header">
+    <h1 class="header--title">URL Shortener using only HTML / JS</h1>
+    <div class="header--subtitle">
+      Inspiration:
       <a href="https://medium.freecodecamp.org/building-a-simple-url-shortener-with-just-html-and-javascript-6ea1ecda308c"
-      >Tutorial by Palash Bauri</a>
+      >How to build a simple URL shortener with just HTML and JavaScript</a> by Palash Bauri.
     </div>
   </header>
   <main>
-    <form id="shortenerForm" action="#" method="post">
-      <input type="url" id="urlInput" pattern="https?://.*">
-      <button type="submit">Shorten The URL</button>
+    <form id="shortenerForm" class="shortener-form" action="#" method="post">
+      <div class="shortener-form--input">
+        <input class="shortener-form--input--field"
+          id="longUrl"
+          type="text"
+          autofocus
+          required
+        >
+        <button type="submit" class="shortener-form--input--button">Shorten This URL</button>
+      </div>
+      <div class="shortener-form--output">
+        <input class="shortener-form--output--field" id="shortUrl"
+          placeholder="&lt;shortened URL will appear here&gt;"
+          disabled
+        >
+        <button type="button"
+          class="shortener-form--output--button"
+          id="copyShortUrl"
+          disabled
+        >Copy</button>
+      </div>
     </form>
+    <aside>
+      <p>
+        Although this was originally inspired by Palash Bauri's
+        <a href="https://medium.freecodecamp.org/building-a-simple-url-shortener-with-just-html-and-javascript-6ea1ecda308c"
+        >How to build a simple URL shortener with just HTML and JavaScript</a> I
+        discovered many issues with the author's code and decided to correct
+        them in my version. In the end, I adopted a significantly different
+        approach than that used in the article.
+      </p>
+    </aside>
   </main>
-  <footer></footer>
   <script src="main.js"></script>
 </body>
 </html>
